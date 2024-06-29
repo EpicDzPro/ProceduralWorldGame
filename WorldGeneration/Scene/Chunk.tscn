@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://56xu5c21qrv8"]
+
+[ext_resource type="Script" path="res://WorldGeneration/Scripts/Chunk.cs" id="1_iq08n"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rrcbk"]
+frequency = 0.005
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bsbev"]
+albedo_color = Color(0.431373, 0.698039, 0.254902, 1)
+
+[node name="Chunk" type="StaticBody3D"]
+script = ExtResource("1_iq08n")
+fast = SubResource("FastNoiseLite_rrcbk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_bsbev")

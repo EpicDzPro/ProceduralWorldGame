@@ -1,0 +1,145 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2ag75ktq3pho"]
+
+[ext_resource type="Script" path="res://Player/Script/TouchControl.gd" id="1_7wu66"]
+[ext_resource type="Texture2D" uid="uid://0nulbcvicjjv" path="res://icon.svg" id="2_fxwjy"]
+
+[node name="TouchControl" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7wu66")
+
+[node name="FORWARD" type="TouchScreenButton" parent="."]
+position = Vector2(256, 704)
+texture_normal = ExtResource("2_fxwjy")
+action = "FORWARD"
+
+[node name="FORWARD" type="Control" parent="FORWARD"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="BACKWARD" type="TouchScreenButton" parent="."]
+position = Vector2(256, 896)
+texture_normal = ExtResource("2_fxwjy")
+action = "BACKWARD"
+
+[node name="BACKWARD" type="Control" parent="BACKWARD"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="LEFT" type="TouchScreenButton" parent="."]
+position = Vector2(64, 896)
+texture_normal = ExtResource("2_fxwjy")
+action = "LEFT"
+
+[node name="LEFT" type="Control" parent="LEFT"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="RIGHT" type="TouchScreenButton" parent="."]
+position = Vector2(448, 896)
+texture_normal = ExtResource("2_fxwjy")
+action = "RIGHT"
+
+[node name="RIGHT" type="Control" parent="RIGHT"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="UP" type="TouchScreenButton" parent="."]
+position = Vector2(2048, 704)
+texture_normal = ExtResource("2_fxwjy")
+action = "UP"
+
+[node name="UP" type="Control" parent="UP"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="DOWN" type="TouchScreenButton" parent="."]
+position = Vector2(2048, 896)
+texture_normal = ExtResource("2_fxwjy")
+action = "DOWN"
+
+[node name="DOWN" type="Control" parent="DOWN"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="FLY" type="TouchScreenButton" parent="."]
+position = Vector2(2240, 704)
+texture_normal = ExtResource("2_fxwjy")
+action = "FLY"
+
+[node name="FLY" type="Control" parent="FLY"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="SHIFT" type="TouchScreenButton" parent="."]
+position = Vector2(2240, 896)
+texture_normal = ExtResource("2_fxwjy")
+action = "SHIFT"
+
+[node name="SHIFT" type="Control" parent="SHIFT"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="LCLICK" type="TouchScreenButton" parent="."]
+position = Vector2(256, 64)
+texture_normal = ExtResource("2_fxwjy")
+action = "LCLICK"
+
+[node name="LCLICK" type="Control" parent="LCLICK"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="RCLICK" type="TouchScreenButton" parent="."]
+position = Vector2(2048, 64)
+texture_normal = ExtResource("2_fxwjy")
+action = "RCLICK"
+
+[node name="RCLICK" type="Control" parent="RCLICK"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="SCROLLUP" type="TouchScreenButton" parent="."]
+position = Vector2(2232, 224)
+texture_normal = ExtResource("2_fxwjy")
+action = "SCROLLUP"
+
+[node name="SCROLLUP" type="Control" parent="SCROLLUP"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="SCROLLDOWN" type="TouchScreenButton" parent="."]
+position = Vector2(2232, 64)
+texture_normal = ExtResource("2_fxwjy")
+action = "SCROLLDOWN"
+
+[node name="SCROLLDOWN" type="Control" parent="SCROLLDOWN"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+metadata/_edit_use_anchors_ = true

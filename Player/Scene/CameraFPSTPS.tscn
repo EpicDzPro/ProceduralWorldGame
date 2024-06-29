@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfouklyotsmwu"]
+
+[ext_resource type="Script" path="res://Player/Script/CameraFPSTPS.gd" id="1_bqek8"]
+
+[node name="CameraFPSTPS" type="SpringArm3D"]
+collision_mask = 0
+spring_length = 4.0
+margin = 0.001
+script = ExtResource("1_bqek8")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+current = true
+far = 40000.0

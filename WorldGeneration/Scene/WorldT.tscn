@@ -1,0 +1,50 @@
+[gd_scene load_steps=14 format=3 uid="uid://dqm75himat2m2"]
+
+[ext_resource type="Script" path="res://WorldGeneration/Scripts/WorldT.cs" id="1_bkrfn"]
+[ext_resource type="PackedScene" uid="uid://56xu5c21qrv8" path="res://WorldGeneration/Scene/Chunk.tscn" id="2_dbasr"]
+[ext_resource type="PackedScene" uid="uid://gudv0vgh5y1t" path="res://Player/Scene/character_body_3d.tscn" id="2_op46p"]
+[ext_resource type="PackedScene" uid="uid://bi3ik06ob6sac" path="res://WorldAssets/Scene/BigRock1.tscn" id="3_ivhnm"]
+[ext_resource type="PackedScene" uid="uid://bhnl6wn4oegig" path="res://WorldAssets/Scene/BigRock2.tscn" id="4_7vp01"]
+[ext_resource type="PackedScene" uid="uid://caleqpwy7vpg4" path="res://WorldAssets/Scene/BigRock3.tscn" id="5_ijtoj"]
+[ext_resource type="PackedScene" uid="uid://pmg60nfgoi27" path="res://WorldAssets/Scene/OakTree1.tscn" id="6_cj43t"]
+[ext_resource type="PackedScene" uid="uid://bp5jm3jgp314x" path="res://WorldAssets/Scene/OakTree2.tscn" id="7_5duxx"]
+[ext_resource type="PackedScene" uid="uid://b2oo6dh6kldu7" path="res://WorldAssets/Scene/OakTree3.tscn" id="8_wo1gm"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xdyqn"]
+frequency = 0.005
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hb4fu"]
+
+[sub_resource type="Sky" id="Sky_vkpr7"]
+sky_material = SubResource("ProceduralSkyMaterial_hb4fu")
+
+[sub_resource type="Environment" id="Environment_vn3kj"]
+background_mode = 2
+sky = SubResource("Sky_vkpr7")
+fog_light_color = Color(0.478431, 0.721569, 1, 1)
+fog_light_energy = 0.0
+fog_sky_affect = 0.001
+
+[node name="WorldT" type="Node3D" node_paths=PackedStringArray("Viewer")]
+script = ExtResource("1_bkrfn")
+ChunkSize = 32
+Resolution = 32
+Workers = 2
+Viewer = NodePath("CharacterBody3D")
+ChunkScene = ExtResource("2_dbasr")
+FastNoise = SubResource("FastNoiseLite_xdyqn")
+Assets = Array[PackedScene]([ExtResource("3_ivhnm"), ExtResource("4_7vp01"), ExtResource("5_ijtoj"), ExtResource("6_cj43t"), ExtResource("7_5duxx"), ExtResource("8_wo1gm")])
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_op46p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707107, -0.500001, 0.5, 0, 0.707108, 0.707107, -0.707107, -0.500001, 0.5, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_blend_splits = true
+directional_shadow_max_distance = 2000.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vn3kj")
